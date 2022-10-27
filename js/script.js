@@ -34,11 +34,10 @@ createApp({
             this.list.push({...this.newList});
             this.newList.text = '';
             this.newList.done = null;
-
         },
-        isDone () {
-            this.done = true;
-            console.log(this.done);
+        isDone (indexOfTask) {
+            this.list.done = true;
+            console.log(this.list.done);
         },
         isntDone (indexOfTask) {
             this.list.splice(indexOfTask, 1);
