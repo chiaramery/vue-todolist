@@ -21,10 +21,12 @@
                 <button @click="newTask">Aggiungi</button>
             </div>
             <ul>
-                <li v-for="(element, index) in list" class="d-flex">
-                    {{element.text}} 
+                <li class="d-flex" v-for="element in list">
+                    <div :class="done===true ? 'cross' : ''">
+                        {{element.text}} 
+                    </div>
                     <div class="done">
-                        <a href="" class="cross-btn" @click.prevent="isntDone()">&cross;</a>
+                        <a href="" class="cross-btn" @click.prevent="isntDone(index)">&cross;</a>
                         <a href="" class="check" @click.prevent="isDone()">&check;</a>
                     </div>
                 </li>

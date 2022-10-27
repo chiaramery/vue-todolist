@@ -51,7 +51,6 @@ h1{
 }
 .cross{
     text-decoration: line-through;
-    color: green;
 }
 .hidden{
     display: none;

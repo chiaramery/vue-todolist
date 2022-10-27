@@ -11,7 +11,7 @@ createApp({
         return {
             newList: {
                 text: '',
-                done: false,
+                done: null,
             },
             list: [
                 {
@@ -33,15 +33,15 @@ createApp({
         newTask () {
             this.list.push({...this.newList});
             this.newList.text = '';
+            this.newList.done = null;
 
         },
         isDone () {
-                this.done = true;
-                console.log(this.done);
-        },
-        isntDone () {
-            this.done = false;
+            this.done = true;
             console.log(this.done);
+        },
+        isntDone (indexOfTask) {
+            this.list.splice(indexOfTask, 1);
         },
     },
 }).mount("#app");
